@@ -1,7 +1,11 @@
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 import fs from "fs";
 
 const list = async () => {
-  fs.readdir("src/fs/files", (err, files) => {
+  fs.readdir(`${__dirname}/files`, (err, files) => {
     if (err) {
         console.log(data);
     } else {

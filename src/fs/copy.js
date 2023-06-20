@@ -1,3 +1,7 @@
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 import fs from "fs";
 
 const throwError = (err) => {
@@ -15,8 +19,8 @@ const copyFile = (arr, pathFiles, pathFilesCopy) => {
 };
 
 const copy = async () => {
-  const pathFiles = "src/fs/files";
-  const pathFilesCopy = "src/fs/files_copy";
+  const pathFiles = `${__dirname}/files`;
+  const pathFilesCopy = `${__dirname}/files_copy`;
 
   fs.readdir(pathFiles, async (err) => {
     if (err) {
