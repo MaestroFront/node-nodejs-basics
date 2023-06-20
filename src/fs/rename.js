@@ -6,7 +6,7 @@ const rename = async () => {
     "src/fs/files/properFilename.md",
     (err) => {
       if (err) {
-        console.log("There is not a file here!");
+        console.log(data);
       } else {
         console.log("File was rename!");
       }
