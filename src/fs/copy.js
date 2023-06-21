@@ -31,15 +31,15 @@ const copy = async () => {
           throwError(err);
         } else {
           console.log("Folder was created!");
+          fs.readdir(pathFiles, async (err, filesFrom) => {
+            if (err) {
+              throwError(err);
+            } else {
+              copyFile(filesFrom, pathFiles, pathFilesCopy);
+            }
+          });
         }
       });
-    }
-  });
-  fs.readdir(pathFiles, async (err, filesFrom) => {
-    if (err) {
-      throwError(err);
-    } else {
-      copyFile(filesFrom, pathFiles, pathFilesCopy);
     }
   });
 };
